@@ -55,7 +55,7 @@ const App = () => {
         <EmailEditor
           ref={emailEditorRef}
           minHeight="500px"
-          style={{ border: "1px solid red" }}
+          style={{ border: "1px solid red", fontFamily: "Arial" }}
           onLoad={onLoad}
           // locale="it"
           locale="en"
@@ -65,6 +65,37 @@ const App = () => {
             panels: {
               tools: {
                 dock: "left",
+              },
+            },
+          }}
+          tools={{
+            divider: {
+              // whether a tool is visible or not
+              enabled: false,
+            },
+            heading: {
+              // position of tool in the tools dock
+              position: 1,
+            },
+            button: {
+              // how many times you can use an item
+              usageLimit: 1,
+              properties: {
+                // changes default properties of tool
+                buttonColors: {
+                  value: {
+                    color: "#000",
+                    backgroundColor: "#3AAEE0",
+                    hoverColor: "#FFFFFF",
+                    hoverBackgroundColor: "#3AAEE0",
+                  },
+                },
+                padding: {
+                  value: "10px 20px",
+                },
+                textAlign: {
+                  value: "center",
+                },
               },
             },
           }}
