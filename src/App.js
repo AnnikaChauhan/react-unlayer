@@ -14,8 +14,8 @@ const App = () => {
   };
 
   const onLoad = () => {
+    // how to save to our server and call back designs: https://docs.unlayer.com/docs/templates
     // we will need to save the template in JSON format to the marketing API, then call it back in JSON format to show the user an existing template - for editing
-    // Can we ask Miodrag if they can take the entire JSON object and use just the HTML to send the template?
     const templateJson = {};
 
     if (Object.keys(templateJson).length !== 0) {
