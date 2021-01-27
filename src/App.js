@@ -55,7 +55,7 @@ const App = () => {
         <EmailEditor
           ref={emailEditorRef}
           minHeight="500px"
-          style={{ border: "1px solid red", fontFamily: "Arial" }}
+          style={{ border: "1px solid blue", fontFamily: "Arial" }}
           onLoad={onLoad}
           // locale="it"
           locale="en"
