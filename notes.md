@@ -5,9 +5,9 @@
 
 ## Things we have to pay for
 
-- Social media tool
-- Timer tool
-- Video tool
-- User upload image tab, this would save all the images uploaded by a user (we'd have to store user information)
-- Font management to add custom fonts to the editor
-- Custom JS/CSS to allow us to customise the editor
+- Social media tool https://docs.unlayer.com/docs/social-media-tool
+- Timer tool https://docs.unlayer.com/docs/timer
+- Video tool https://docs.unlayer.com/docs/video-tool
+- User upload image tab, this would save all the images uploaded by a user (we'd have to store user information) https://docs.unlayer.com/docs/user-uploads
+- Font management to add custom fonts to the editor https://docs.unlayer.com/docs/font-management
+- Custom JS/CSS to allow us to customise the editor https://docs.unlayer.com/docs/custom-js-css
