@@ -1,5 +1,6 @@
 # Notes on Unlayer
 - It seems pretty good, we can load existing designs (e.g. if a communication is a draft), we must save the entire JSON object which includes the HTML
+- The HTML alone if put into a seperate file will show all features as designed so marketting will only require this section
 - We can have light and dark mode, custom tools and have the toolbar on left and right
 
 ## Things we have to pay for
