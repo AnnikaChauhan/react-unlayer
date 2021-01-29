@@ -1,4 +1,6 @@
 # Notes on Unlayer
+- It seems pretty good, we can load existing designs (e.g. if a communication is a draft), we must save the entire JSON object which includes the HTML
+- We can have light and dark mode, custom tools and have the toolbar on left and right
 
 ## Things we have to pay for
 
