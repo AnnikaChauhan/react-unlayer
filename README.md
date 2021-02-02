@@ -5,6 +5,9 @@
 - It seems pretty good, we can load existing designs (e.g. if a communication is a draft), we must save the entire JSON object which includes the HTML
 - The HTML alone if put into a seperate file will show all features as designed so marketting will only require this section
 - We can have light and dark mode, custom tools and have the toolbar on left and right
+- I had a conversation with an advisor at Unlayer about Paulo’s question regarding whether we can have access to some of their pre-built templates. He said that we would be able to purchase up to 20 of their pre-built templates for $5 each, if we are on one of their paid plans.
+
+- He also said that they offer a 14-day free trial of the paid plan if we wanted to try out some of the paid for features.
 
 ### Things we have to pay for
 

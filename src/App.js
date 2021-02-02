@@ -71,7 +71,7 @@ const App = () => {
           tools={{
             divider: {
               // whether a tool is visible or not
-              enabled: false,
+              // enabled: false,
             },
             heading: {
               // position of tool in the tools dock
