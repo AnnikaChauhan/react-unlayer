@@ -24,12 +24,76 @@ const App = () => {
     return null;
   };
 
+  const layout = {};
+
+  const onLoadTemplate = () => {
+    if (Object.keys(layout).length !== 0) {
+      return emailEditorRef?.current?.editor?.loadDesign(JSON.parse(layout));
+    }
+    emailEditorRef?.current?.editor?.addEventListener(
+      "design:loaded",
+      (data) => {
+        // Design is loaded
+        console.log(data); // design json
+      }
+    );
+  };
+
   const save = () => {
     emailEditorRef.current.editor.saveDesign((data) => {
       // this data is just the design part of the JSON
       console.log(data);
     });
   };
+
+  emailEditorRef?.current?.editor?.addEventListener("design:loaded", (data) => {
+    // Design is loaded
+    console.log(data); // design json
+  });
+
+  emailEditorRef?.current?.editor?.registerProvider(
+    "blocks",
+    function (params, done) {
+      console.log("blocks provider", params);
+      done([]);
+    }
+  );
+
+  emailEditorRef?.current?.editor?.registerCallback(
+    "block:added",
+    function (newBlock, done) {
+      console.log("block:added", newBlock);
+
+      // Save the block to your database here
+      // and pass the object to done callback.
+      // Each block should have it's own unique id
+
+      done(newBlock);
+    }
+  );
+
+  emailEditorRef?.current?.editor?.registerCallback(
+    "block:modified",
+    function (existingBlock, done) {
+      console.log("block:modified", existingBlock);
+
+      // Update the block in your database here
+      // and pass the updated object to done callback.
+
+      done(existingBlock);
+    }
+  );
+
+  emailEditorRef?.current?.editor?.registerCallback(
+    "block:removed",
+    function (existingBlock, done) {
+      console.log("block:removed", existingBlock);
+
+      // Delete the block from your database here.
+
+      done(existingBlock);
+    }
+  );
 
   return (
     <div>
@@ -56,7 +120,7 @@ const App = () => {
           ref={emailEditorRef}
           minHeight="500px"
           style={{ border: "1px solid blue", fontFamily: "Arial" }}
-          onLoad={onLoad}
+          onLoad={onLoadTemplate}
           // locale="it"
           locale="en"
           safeHtml={true}
@@ -66,6 +130,13 @@ const App = () => {
               tools: {
                 dock: "left",
               },
+            },
+          }}
+          options={{
+            user: {
+              id: 1,
+              name: "John Doe",
+              email: "john.doe@acme.com",
             },
           }}
           tools={{
@@ -79,7 +150,7 @@ const App = () => {
             },
             button: {
               // how many times you can use an item
-              usageLimit: 1,
+              // usageLimit: 1,
               properties: {
                 // changes default properties of tool
                 buttonColors: {
