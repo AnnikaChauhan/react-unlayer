@@ -137,8 +137,8 @@ const App = () => {
           options={{
             user: {
               id: 1,
-              name: "John Doe",
-              email: "john.doe@acme.com",
+              name: "Annika Chauhan",
+              email: "a.chauhan@novafutur.com",
             },
           }}
           tools={{
