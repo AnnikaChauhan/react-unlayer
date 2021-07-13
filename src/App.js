@@ -119,6 +119,7 @@ const App = () => {
         <EmailEditor
           ref={emailEditorRef}
           projectId={27694}
+          id="editor"
           minHeight="500px"
           style={{ border: "1px solid blue", fontFamily: "Arial" }}
           onLoad={onLoadTemplate}
