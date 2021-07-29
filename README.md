@@ -9,6 +9,8 @@
 
 - He also said that they offer a 14-day free trial of the paid plan if we wanted to try out some of the paid for features.
 
+- A user can have UNLIMITED User Blocks for free!
+
 ### Things we have to pay for
 
 - If we want more than ONE Custom Block
