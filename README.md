@@ -11,6 +11,7 @@
 
 ### Things we have to pay for
 
+- If we want more than ONE Custom Block
 - Social media tool https://docs.unlayer.com/docs/social-media-tool
 - Timer tool https://docs.unlayer.com/docs/timer
 - Video tool https://docs.unlayer.com/docs/video-tool

@@ -34,7 +34,7 @@ const App = () => {
       "design:loaded",
       (data) => {
         // Design is loaded
-        console.log(data); // design json
+        console.log("design load", data); // design json
       }
     );
   };
@@ -51,14 +51,127 @@ const App = () => {
     console.log(data); // design json
   });
 
+  let blocks = [
+    {
+      category: "Test",
+      tags: ["tag1"],
+      data: {
+        cells: [1],
+        columns: [
+          {
+            contents: [
+              {
+                type: "heading",
+                values: {
+                  containerPadding: "10px",
+                  headingType: "h1",
+                  fontFamily: {
+                    label: "Arial",
+                    value: "arial,helvetica,sans-serif",
+                  },
+                  fontSize: "22px",
+                  textAlign: "left",
+                  lineHeight: "140%",
+                  linkStyle: {
+                    inherit: true,
+                    linkColor: "#0000ee",
+                    linkHoverColor: "#0000ee",
+                    linkUnderline: true,
+                    linkHoverUnderline: true,
+                  },
+                  _meta: {
+                    htmlClassNames: "u_content_heading",
+                  },
+                  selectable: true,
+                  draggable: true,
+                  duplicatable: true,
+                  deletable: true,
+                  hideable: true,
+                  text: "Heading",
+                },
+              },
+              {
+                type: "button",
+                values: {
+                  containerPadding: "10px",
+                  href: {
+                    name: "web",
+                    values: {
+                      href: "",
+                      target: "_blank",
+                    },
+                  },
+                  buttonColors: {
+                    color: "#FFFFFF",
+                    backgroundColor: "#3AAEE0",
+                    hoverColor: "#FFFFFF",
+                    hoverBackgroundColor: "#3AAEE0",
+                  },
+                  size: {
+                    autoWidth: true,
+                    width: "100%",
+                  },
+                  textAlign: "center",
+                  lineHeight: "120%",
+                  padding: "10px 20px",
+                  border: {},
+                  borderRadius: "4px",
+                  _meta: {
+                    htmlClassNames: "u_content_button",
+                  },
+                  selectable: true,
+                  draggable: true,
+                  duplicatable: true,
+                  deletable: true,
+                  hideable: true,
+                  text: '<span style="font-size: 14px; line-height: 16.8px;">Button Text</span>',
+                },
+              },
+            ],
+            values: {
+              _meta: {
+                htmlClassNames: "u_column",
+              },
+            },
+          },
+        ],
+        values: {
+          displayCondition: null,
+          columns: false,
+          backgroundColor: "",
+          columnsBackgroundColor: "",
+          backgroundImage: {
+            url: "",
+            fullWidth: true,
+            repeat: false,
+            center: true,
+            cover: false,
+          },
+          padding: "0px",
+          hideDesktop: false,
+          _meta: {
+            htmlClassNames: "u_row",
+          },
+          selectable: true,
+          draggable: true,
+          duplicatable: true,
+          deletable: true,
+          hideable: true,
+        },
+      },
+      displayMode: "email",
+    },
+  ];
+
   emailEditorRef?.current?.editor?.registerProvider(
     "blocks",
     function (params, done) {
       console.log("blocks provider", params);
-      done([]);
+      done(blocks);
     }
   );
 
+  // these call backs would be used to manage on our side
   emailEditorRef?.current?.editor?.registerCallback(
     "block:added",
     function (newBlock, done) {
@@ -140,6 +253,7 @@ const App = () => {
               name: "Annika Chauhan",
               email: "a.chauhan@novafutur.com",
             },
+            blocks: blocks,
           }}
           tools={{
             divider: {
